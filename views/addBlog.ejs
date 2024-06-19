@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <%- include("./partials/head.ejs") %>
-    <title>Sign Up</title>
     <style>
-     
+      /* Reset some default browser styles */
       body,
       h1,
       p,
@@ -16,13 +15,14 @@
       form,
       label,
       input,
-      button {
+      button,
+      textarea {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
 
-    
+      /* Apply a font to the entire page */
       body {
         font-family: "Roboto", sans-serif;
         background-color: #f4f4f4;
@@ -30,36 +30,9 @@
         line-height: 1.6;
       }
 
-    
-      nav {
-        background-color: #333;
-        color: white;
-        padding: 1em;
-        display: flex;
-        justify-content: center;
-      }
-
-      nav ul {
-        list-style: none;
-        display: flex;
-      }
-
-      nav ul li {
-        margin: 0 1em;
-      }
-
-      nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      nav ul li a:hover {
-        text-decoration: underline;
-      }
-
+      /* Style the container */
       .container {
-        max-width: 600px;
+        max-width: 800px;
         margin: 2em auto;
         padding: 2em;
         background: white;
@@ -105,39 +78,46 @@
         background-color: #0056b3;
       }
 
-      
+      /* Style the margin utility classes */
+      .m-5 {
+        margin: 1.5em 0;
+      }
+
       .mt-4 {
         margin-top: 2em;
       }
     </style>
   </head>
   <body>
-    <%- include("./partials/nav.ejs") %>
-    <div class="container mt-4">
-      <form method="post" action="/user/signin">
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >Email address</label
-          >
+    <div class="mt-4">
+      <form action="/blog" method="post" enctype="multipart/form-data">
+        <div class="m-5">
+          <label for="title" class="form-label">Title</label>
           <input
-            type="email"
-            name="email"
+            type="text"
             class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
+            id="title"
+            name="title"
+            aria-describedby="title"
           />
         </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input
-            name="password"
-            type="password"
+        <div class="m-5">
+          <label for="coverImage" class="form-label"> CoverImage </label>
+          <input type="file" class="form-control" name="coverImage" />
+        </div>
+        <div class="m-5">
+          <label for="body" class="form-label">Content </label>
+          <textarea
+            name="body"
             class="form-control"
-            id="exampleInputPassword1"
-          />
+            id="floatingTextarea"
+            placeholder="Type your content Here..."
+          ></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="m-5">
+          <button class="btn btn-primary">Submit</button>
+        </div>
       </form>
     </div>
     <%- include("./partials/scripts.ejs") %>

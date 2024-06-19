@@ -3,6 +3,114 @@
   <head>
     <%- include("./partials/head.ejs") %>
     <title>Sign Up</title>
+    <style>
+      
+      body,
+      h1,
+      p,
+      img,
+      nav,
+      ul,
+      li,
+      a,
+      form,
+      label,
+      input,
+      button {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      
+      nav {
+        background-color: #333;
+        color: white;
+        padding: 1em;
+        display: flex;
+        justify-content: center;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 0 1em;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      nav ul li a:hover {
+        text-decoration: underline;
+      }
+
+     
+      .container {
+        max-width: 600px;
+        margin: 2em auto;
+        padding: 2em;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+     
+      .form-label {
+        font-weight: bold;
+        margin-bottom: 0.5em;
+        display: block;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 0.5em;
+        margin-bottom: 1em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        border: none;
+        color: white;
+        padding: 0.5em 1em;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+
+      
+      .mt-4 {
+        margin-top: 2em;
+      }
+    </style>
   </head>
   <body>
     <%- include("./partials/nav.ejs") %>
